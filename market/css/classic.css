@@ -1,0 +1,144 @@
+.columns .ui-table {
+	width: 100%;
+	border-collapse: collapse;
+	border-color: #ccc;
+	border-style: solid;
+	border-width: 1px 1px 0
+}
+
+.columns .ui-table thead tr {
+	background-image: -webkit-linear-gradient(top,#fff 10%,#fff 100%);
+	background-image: linear-gradient(to bottom,#fff 10%,#B8B8B8 100%);
+	color: #333;
+	text-align: center;
+	font-weight: 700;
+	font-size: 15px;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DBDBDB',endColorstr='#B8B8B8',GradientType=0);
+	height: 35px;
+
+}
+
+.columns .ui-table thead tr th {
+	text-align: center;
+	padding: 5px 5px 5px 8px;
+	border-right: 1px solid #878787;
+	border-bottom: 1px solid #878787
+}
+
+.columns .ui-table thead tr th:first-child {
+	border-left: 1px solid #ccc
+}
+
+.columns .ui-table thead tr th:last-child {
+	border-right: 1px solid #ccc
+}
+
+.columns .ui-table thead tr th .ui-arrow {
+	float: right;
+	display: block;
+	width: 10px;
+	font-size: 10px
+}
+
+.columns .ui-table thead tr th.ui-table-sort-down,.columns .ui-table thead tr th.ui-table-sort-up {
+	background: -webkit-linear-gradient(top,#d0d9e4 10%,#94a3c0 100%);
+	background: linear-gradient(to bottom,#d0d9e4 10%,#94a3c0 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D0D9E4',endColorstr='#94A3C0',GradientType=0)
+}
+
+.columns .ui-table tbody {
+	font-size: 14px
+}
+
+.columns .ui-table tbody tr td {
+	text-align: center;
+	padding: 9pt;
+	border-right: 1px solid #ccc
+}
+
+.columns .ui-table tbody tr.ui-table-rows-even {
+	background: #f1f4f8
+}
+
+.columns .ui-table tbody tr.ui-table-rows-odd {
+	background: #fff
+}
+
+.columns .ui-table-footer {
+	padding: 8px 0;
+	width: 100%;
+	border-top: 1px solid #878787;
+	background-image: -webkit-linear-gradient(top,#f7f7f7 10%,#aaa 100%);
+	background-image: linear-gradient(to bottom,#f7f7f7 10%,#aaa 100%);
+	color: #333;
+	text-align: left;
+	font-size: 11px;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CBCBCB',endColorstr='#AAAAAA',GradientType=0)
+}
+
+.columns .ui-table-footer span {
+	vertical-align: middle
+}
+
+.columns .ui-table-footer .ui-table-controls,.columns .ui-table-footer .ui-table-results,.columns .ui-table-footer .ui-table-size {
+	display: inline-block;
+	width: 32%
+}
+
+.columns .ui-table-footer .ui-table-size {
+	padding-left: 20px
+}
+
+.columns .ui-table-footer .ui-table-results {
+	text-align: center
+}
+
+.columns .ui-table-footer .ui-table-controls {
+	text-align: right
+}
+
+.columns .ui-table-footer .ui-table-control-disabled,.columns .ui-table-footer .ui-table-control-next,.columns .ui-table-footer .ui-table-control-prev {
+	display: inline-block;
+	margin: 0;
+	padding: 5px;
+	border: 1px solid #333;
+	border-radius: 3px;
+	background-color: transparent;
+	background-image: -webkit-linear-gradient(top,#fdfdfd 10%,#c0bfbe 100%);
+	background-image: linear-gradient(to bottom,#fdfdfd 10%,#c0bfbe 100%);
+	color: #333;
+	list-style: none;
+	vertical-align: middle;
+	text-align: center;
+	font-weight: 700;
+	cursor: pointer
+}
+
+.columns .ui-table-footer .ui-table-control-disabled img {
+	opacity: .5
+}
+
+.columns .ui-columns-search {
+	padding: 10px;
+	border-bottom: 1px solid #878787;
+	background: -webkit-linear-gradient(top,#428dea 10%,#8fd1ef 100%);
+	background: linear-gradient(to bottom,#428dea 10%,#8fd1ef 100%);
+	text-align: right;
+	font-size: 14px;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D1D1D1',endColorstr='#A7A7A8',GradientType=0)
+}
+
+.columns .ui-columns-search input {
+	padding: 4px 10px 4px 25px;
+	width: 200px;
+	border: 2px solid transparent;
+	border-radius: 10px;
+	background-image: url(../images/search.png);
+	background-position: 5px center;
+	background-repeat: no-repeat
+}
+
+.columns .ui-columns-search input:focus {
+	outline: 0;
+	border: 2px solid #6196cd
+}

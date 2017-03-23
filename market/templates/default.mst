@@ -1,0 +1,122 @@
+<!-- 搜索框 --> 
+
+{{#search}}
+<div class="ui-columns-search">
+    <p style="font-size:25px;font-weight:200;color:red;font-family:cursive;">菜&nbsp场&nbsp达&nbsp标&nbsp考&nbsp核&nbsp情&nbsp况&nbsp详&nbsp情
+    </p> 
+    <input class="ui-table-search" placeholder="搜索..." type="text" name="query" data-columns-search="true" value="{{query}}" />
+</div>
+{{/search}}
+
+<!-- 搜索框 --> 
+
+{{#table}}
+<div class="ui-columns-table" data-columns-table="true">
+    <table class="ui-table">
+        
+        <!-- 表头，筛选4种状态 (sortable, notSortable, sortedUp, sortedDown) -->
+        <thead>
+            {{#headers}} 
+                {{#sortable}}
+                    <th class="ui-table-sortable" data-columns-sortby="{{key}}">{{header}}</th>
+                {{/sortable}}
+                
+                {{#notSortable}}
+                    <th class="">{{header}}</th>
+                {{/notSortable}}
+                
+                {{#sortedUp}}
+                    <th class="ui-table-sort-up ui-table-sortable" data-columns-sortby="{{key}}">{{header}} <span class="ui-arrow">&#x25B2;</span></th>
+                {{/sortedUp}}
+                
+                {{#sortedDown}}
+                    <th class="ui-table-sort-down ui-table-sortable" data-columns-sortby="{{key}}">{{header}} <span class="ui-arrow">&#x25BC;</span></th>
+                {{/sortedDown}} 
+            {{/headers}}    
+        </thead>
+        <!-- 表头，筛选4种状态 (sortable, notSortable, sortedUp, sortedDown) -->
+        
+        <!-- table主体  -->
+        <tbody>
+            {{#rows}}
+                {{{.}}}
+            {{/rows}}
+        </tbody>
+        <!-- table主体  -->
+    
+    </table>
+    
+    
+    <!-- 显示行数，跳转  -->
+    <div class="ui-table-footer">
+        <span class="ui-table-size">显示行数: {{{showRowsMenu}}}</span> 
+        <span class="ui-table-results">显示第:
+            <strong>{{resultRange.start}}</strong>至 <strong>{{resultRange.end}}</strong>条数据，共
+            <strong>{{tableTotal}}</strong>条数据
+        </span> 
+        <span class="ui-table-controls">
+            {{#prevPageExists}} 
+                <span class="ui-table-control-prev" data-columns-page="{{prevPage}}">
+                    <img src="images/arrow-left.png">
+                </span>
+            {{/prevPageExists}}
+            
+            {{^prevPageExists}}
+                <span class="ui-table-control-disabled">
+                    <img src="images/arrow-left.png">
+                </span>
+            {{/prevPageExists}}             
+            
+            {{#nextPageExists}}
+                <span class="ui-table-control-next" data-columns-page="{{nextPage}}">
+                    <img src="images/arrow-right.png">
+                </span>
+            {{/nextPageExists}}
+            
+            {{^nextPageExists}}
+                <span class="ui-table-control-disabled">
+                    <img src="images/arrow-right.png">
+                </span>
+            {{/nextPageExists}}
+        </span>
+    </div>
+    <!-- 显示行数，跳转  -->
+    
+</div>
+
+<script>
+
+     $("table").find("tr").find("td:eq(7)").each(function () {
+        　　if ($(this).text() == "0") {
+        　　　　$(this).css("color", "#000000");
+        　　} else {
+               $(this).css({"color":"#08b908","font-weight":"bold"});           
+        　　}
+        });
+
+         $("table").find("tr").find("td:eq(8)").each(function () {
+        　　if ($(this).text() == "0") {
+        　　　　$(this).css("color", "#000000");
+        　　} else {
+               $(this).css({"color":"#08b908","font-weight":"bold"});           
+        　　}
+        });
+
+         $("table").find("tr").find("td:eq(9)").each(function () {
+        　　if ($(this).text() == "0") {
+        　　　　$(this).css("color", "#000000");
+        　　} else {
+               $(this).css({"color":"red","font-weight":"bold"});           
+        　　}
+        });
+
+          $("table").find("tr").find("td:eq(10)").each(function () {
+        　　if ($(this).text() == "0") {
+        　　　　$(this).css("color", "#000000");
+        　　} else {
+               $(this).css({"color":"red","font-weight":"bold"});           
+        　　}
+        });
+</script>
+{{/table}}
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<!--[if IE 7]>    <html class="ie7" lang="en"> <![endif]-->
+
+<!--[if IE 8]>    <html class="ie8" lang="en"> <![endif]-->
+
+<!--[if IE 9]>    <html class="ie9" lang="en"> <![endif]-->
+
+<!--[if gt IE 9]><!--> <html lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <link href="css/prettify.css" rel="stylesheet">
+        <link href="css/hemisu-light.css" rel="stylesheet">
+        <link href="css/screen.css" rel="stylesheet" media="screen">
+        <link id="style" href="css/classic.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+        <section>
+            <div id="example"></div>
+        </section>
+       
+        <script src="js/jquery.min.js"></script>
+
+        <script src="js/jquery.columns.min.js"></script>
+
+        <script type="text/javascript">
+            
+        </script>
+
+        <script>
+
+            $.ajax({
+                url:'data.json',
+                dataType: 'json', 
+                success: function(json) { 
+                    example = $('#example').columns({
+                        evenRowClass: 'even-rows',
+                        data:json,
+                        templateFile: 'templates/default.mst ',
+                        sortableFields: ['yf','retailId','totAmt','meatAmt','vegAmt','meatDbhs','vegDbhs','meatBdbhs','vegBdbhs'],
+                schema: [
+
+                    {"header":"月份", "key":"yf"},
+
+                    {"header":"菜场ID", "key":"retailId"},
+
+                    {"header":"菜场名称", "key":"retailName","template":'<a href="market.html?yf={{yf}}&marketId={{retailId}}" style="text-decoration:underline;">{{retailName}}</a>'},
+
+                    {"header":"区域", "key":"areaName"},
+
+                    {"header":"户总数", "key":"totAmt"},
+
+                    {"header":"肉类户总数", "key":"meatAmt"},
+                    
+                    {"header":"蔬菜户总数", "key":"vegAmt"},
+
+                    {"header":"肉类达标户数", "key":"meatDbhs",},
+                    
+                    {"header":"蔬菜达标户数", "key":"vegDbhs"},
+
+                    {"header":"肉类不达标户数", "key":"meatBdbhs"},
+
+                    {"header":"蔬菜不达标户数", "key":"vegBdbhs"}
+
+                ]
+                    }); 
+                }
+            }); 
+
+       
+        </script>   
+
+        </div>
+
+    </body>
+</html>
+

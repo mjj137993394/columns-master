@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<!--[if IE 7]>    <html class="ie7" lang="en"> <![endif]-->
+
+<!--[if IE 8]>    <html class="ie8" lang="en"> <![endif]-->
+
+<!--[if IE 9]>    <html class="ie9" lang="en"> <![endif]-->
+
+<!--[if gt IE 9]><!--> <html lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <link href="css/prettify.css" rel="stylesheet">
+        <link href="css/hemisu-light.css" rel="stylesheet">
+        <link href="css/screen.css" rel="stylesheet" media="screen">
+        <link id="style" href="css/classic.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+        <section>
+            <div id="example1"></div>
+        </section>
+       
+        <script src="js/jquery.min.js"></script>
+
+        <script src="js/jquery.columns.min.js"></script>
+        <script src="../js/public.js"></script>
+
+        <script>
+        	//alert(GetRequest("yf"));
+        	var data = {
+	            yf:GetRequest("yf"),
+	            marketId:GetRequest("marketId")
+	        };
+            $.ajax({
+                url:'queryWarn.do',
+                dataType: 'json', 
+                data:data,
+                success: function(json) { 
+                    example1 = $('#example1').columns({
+                        data:json,
+
+                schema: [
+                    {"header":"月份", "key":"yf"},
+
+                    {"header":"区域", "key":"areaName"},
+
+                    {"header":"本月份过去天数", "key":"byfljts"},
+
+                    {"header":"计算日期", "key":"dt"},
+
+                    {"header":"菜场ID", "key":"retailId"},
+
+                    {"header":"菜场名称", "key":"retailName"},
+
+                    {"header":"摊位号", "key":"retailerId"},
+
+                    {"header":"摊位名", "key":"retailerName"},
+
+                    {"header":"到目前达标天数累计", "key":"tbts"},
+
+                    {"header":"达标情况", "key":"txgj"}
+
+                ]
+                    }); 
+                }
+            }); 
+        </script>   
+    </body>
+</html>
+
+
+
+
